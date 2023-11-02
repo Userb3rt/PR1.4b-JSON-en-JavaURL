@@ -27,11 +27,11 @@ public class PR143GestioLlibreriaMain {
          * 
          */
         ObjectMapper objectMapper = new ObjectMapper();
-
+        // Llegir l'arxiu JSON en una llista d'objectes
         List<Map<String, Object>> llistaDeLlibres = objectMapper.readValue(
                 new File("src/main/java/cat/iesesteveterradas/resources/assets/llibres_input.json"),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Map.class));
-
+                
         for (Map<String, Object> map : llistaDeLlibres) {
             System.out.print(map.get("id") + tabular(map.get("id") + ""));
             System.out.print(map.get("títol") + tabular(map.get("títol") + ""));
@@ -102,7 +102,8 @@ public class PR143GestioLlibreriaMain {
             String nomArxiu = "src/main/java/cat/iesesteveterradas/resources/assets/llibres_input.json";
             objectMapper = new ObjectMapper();
             // Llegir l'arxiu JSON en una llista d'objectes
-            List<ObjectNode> llistaLlibres = objectMapper.readValue(new File(nomArxiu), objectMapper.getTypeFactory().constructCollectionType(List.class, ObjectNode.class));
+            List<ObjectNode> llistaLlibres = objectMapper.readValue(new File(nomArxiu),
+                    objectMapper.getTypeFactory().constructCollectionType(List.class, ObjectNode.class));
             // Iterar sobre la llista de llibres i buscar el que tingui un id igual a 2
             java.util.Iterator<ObjectNode> iter = llistaLlibres.iterator();
             while (iter.hasNext()) {
