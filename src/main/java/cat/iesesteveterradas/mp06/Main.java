@@ -1,33 +1,41 @@
 package cat.iesesteveterradas.mp06;
 
+import java.util.Scanner;
+
 public class Main {
+    static Scanner in = new Scanner(System.in); // System.in és global
+
     public static void main(String[] args) {
         boolean running = true;
-    while (running) {
-      String menu = "Escull una opció:";
-      menu = menu + "\n 0) PR120ReadFile";
-      // Adapta aquí les altres classes de l’exercici (PR122cat…)
-      menu = menu + "\n 100) Sortir";
-      System.out.println(menu);
+        while (running) {
+            String menu = "Escull una opció:";
+            menu = menu + "\n 0) PR143GestioLlibreriaMain";
+            // Adapta aquí les altres classes de l’exercici (PR122cat…)
+            menu = menu + "\n 100) Sortir";
+            System.out.println(menu);
 
-      int opcio = Integer.valueOf(llegirLinia("Opció:"));
-      try {
-        switch (opcio) {
-          case 0: PR143GestioLlibreriaMain.main(args); break;
-          // Adapta aquí les altres classes de l’exercici (PR122cat…)
-          case 100: running = false; break;
-          default: break;
+            int opcio = Integer.valueOf(llegirLinia("Opció:"));
+            try {
+                switch (opcio) {
+                    case 0:
+                        PR143GestioLlibreriaMain.main(args);
+                        break;
+                    // Adapta aquí les altres classes de l’exercici (PR122cat…)
+                    case 100:
+                        running = false;
+                        break;
+                    default:
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
-      } catch (Exception e) {
-          System.out.println(e);
-      }
+        in.close();
     }
-    in.close();
-  }
 
-  static public String llegirLinia (String text) {
-    System.out.print(text);
-    return in.nextLine();
-  }
+    static public String llegirLinia(String text) {
+        System.out.print(text);
+        return in.nextLine();
     }
 }
