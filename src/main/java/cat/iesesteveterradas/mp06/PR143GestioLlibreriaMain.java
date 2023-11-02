@@ -13,8 +13,9 @@ public class PR143GestioLlibreriaMain {
     static String[] titles = { "Id", "Títol", "Autor", "Any" };
 
     public static void main(String[] args) throws IOException {
-        // primero vamos a hacer la lectura del fichero.
-        // Printeamos las cabecera para los titulos para los atributos.
+        /*
+         * primer imprimirem la capçalera dels títols dels atributs per poder llegir-los
+         */
         for (int i = 0; i < titles.length; i++) {
             System.out.print(titles[i] + tabular(titles[i]));
 
@@ -46,7 +47,6 @@ public class PR143GestioLlibreriaMain {
         try {
             // Nom de l'arxiu JSON
             String nomArxiu = "src/main/java/cat/iesesteveterradas/resources/assets/llibres_input.json";
-            // Crear un ObjectMapper de Jackson
             objectMapper = new ObjectMapper();
             // Llegir l'arxiu JSON en una llista d'objectes
             List<ObjectNode> llistaLlibres = objectMapper.readValue(new File(nomArxiu),
@@ -74,7 +74,6 @@ public class PR143GestioLlibreriaMain {
         try {
             // Nom de l'arxiu JSON
             String nomArxiu = "src/main/java/cat/iesesteveterradas/resources/assets/llibres_input.json";
-            // Crear un ObjectMapper de Jackson
             objectMapper = new ObjectMapper();
             // Llegir l'arxiu JSON en una llista d'objectes
             List<ObjectNode> llistaLlibres = objectMapper.readValue(new File(nomArxiu),
@@ -101,7 +100,6 @@ public class PR143GestioLlibreriaMain {
         try {
             // Nom de l'arxiu JSON
             String nomArxiu = "src/main/java/cat/iesesteveterradas/resources/assets/llibres_input.json";
-            // Crear un ObjectMapper de Jackson
             objectMapper = new ObjectMapper();
             // Llegir l'arxiu JSON en una llista d'objectes
             List<ObjectNode> llistaLlibres = objectMapper.readValue(new File(nomArxiu), objectMapper.getTypeFactory().constructCollectionType(List.class, ObjectNode.class));
